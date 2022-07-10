@@ -35,21 +35,23 @@ const Navbar = (props) => {
         <nav>
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
                 <div className="container">
-                    <a class="navbar-brand"
+                    <a class="navbar-brand" href="#Navbar"
                     >
                         <img
                             id="code-logo"
                             src={coder}
                             height="30"
+                            alt = "good"
                         />
                         <img
                             id="code-logo"
                             src={pankaj}
                             height="30"
                             width = "200"
+                            alt = "good"
                         />
                         </a>
-                    <button
+                    <button 
                         class="navbar-toggler"
                         type="button"
                         data-mdb-toggle="collapse"
