@@ -28,7 +28,7 @@ function App() {
     }
 
     // Post request to compile endpoint
-    Axios.post(`https://codersbayapi.herokuapp.com`, {
+    Axios.post(`https://codersbayapi.herokuapp.com/compile`, {
       code: userCode,
       language: userLang,
       input: userInput
@@ -36,8 +36,8 @@ function App() {
       console.log(res.data.output);
       setUserOutput(res.data.output);
       setLoading(false);
-    }).then(() => {
-       
+    }).catch((error) =>{
+      console.log("some error has occured");
     })
   }
 
