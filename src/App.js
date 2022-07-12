@@ -28,12 +28,12 @@ function App() {
     }
 
     // Post request to compile endpoint
-    Axios.post(`https://codersbayapi.herokuapp.com/compile`, {
+    Axios.post(`https://codecompileapi.herokuapp.com/compile`, {
       code: userCode,
       language: userLang,
       input: userInput
     }).then((res) => {
-      console.log(res.data.output);
+      console.log(JSON.stringify(res.data.output));
       setUserOutput(res.data.output);
       setLoading(false);
     }).catch((error) =>{

@@ -19,18 +19,16 @@ const Navbar = (props) => {
         setCount((count + 1) % 3);
         if (count === 0) {
             props.setUserLang("cpp")
-            setLanguage("CPP");
+            setLanguage("cpp");
         }
         else if (count === 1) {
             props.setUserLang("py")
-            setLanguage("PYTHON");
+            setLanguage("Python");
         } else {
             props.setUserLang("java")
-            setLanguage("JAVA");
+            setLanguage("Java");
         }
     }
-
-    console.log(props);
     return (
         <nav>
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -65,13 +63,13 @@ const Navbar = (props) => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
                         <ul class="navbar-nav ms-auto align-items-center">
-                            <li className="nav-item ms-3" onClick={() => chooseLanguage()}>
+                            <li className="nav-item ms-3" onClick={() => chooseLanguage() }>
                                 <button class="btn btn-black btn-rounded text-success"> Language : {language} </button>
                             </li>
                             <li className="nav-item ms-3">
                             <input type="range" min="18" max="30" value={props.fontSize} step="0.5" onChange={(e) => { props.setFontSize(e.target.value) }} />
                             </li>
-                            <li className="nav-item ms-3" onClick={() => newMode()}>
+                            <li className="nav-item ms-3" onClick={() => newMode() }>
                                 {toggle ? <button class="btn btn-black btn-rounded text-danger"> 👌 Light </button> : <button class="btn btn-black btn-rounded text-success">👍 Dark</button>}
                             </li>
                         </ul>
