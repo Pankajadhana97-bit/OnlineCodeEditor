@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../App.css';
-import coder from '../assets/coder.svg';
+import coder from '../assets/coder.gif';
 import pankaj from '../assets/pankaj.svg';
 
 const Navbar = (props) => {
@@ -29,6 +29,7 @@ const Navbar = (props) => {
             setLanguage("Java");
         }
     }
+
     return (
         <nav>
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark">

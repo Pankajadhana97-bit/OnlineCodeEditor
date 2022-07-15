@@ -4,7 +4,7 @@ import Editor from "@monaco-editor/react";
 import Navbar from './components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Axios from 'axios';
-import spinner from './assets/spinner.webp';
+import spinner from './assets/loading.gif';
 
 function App() {
 
