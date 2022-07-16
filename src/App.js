@@ -8,7 +8,10 @@ import spinner from './assets/loading.gif';
 
 function App() {
 
-  const [userCode, setUserCode] = useState(``);
+  var codes = new Map();
+  codes['cpp'] = '#include<bits/stdc++.h>\nusing namespace std;\n\nint main(){ \n cout<<"Hello world;\n return 0;\n}'
+
+  const [userCode, setUserCode] = useState(codes['cpp']);
   const [userLang, setUserLang] = useState("cpp");
   const [userTheme, setUserTheme] = useState("vs-dark");
   const [fontSize, setFontSize] = useState(20);
@@ -41,7 +44,6 @@ function App() {
     })
   }
 
-
   function clearOutput() {
     setUserOutput("");
   }
@@ -53,6 +55,7 @@ function App() {
         userLang={userLang} setUserLang={setUserLang}
         userTheme={userTheme} setUserTheme={setUserTheme}
         fontSize={fontSize} setFontSize={setFontSize}
+        userCode={userCode} setUserCode={setUserCode}
       />
 
       <div className="main">
@@ -63,8 +66,7 @@ function App() {
             width="100%"
             theme={userTheme}
             language={userLang}
-            defaultLanguage="cpp"
-            defaultValue="  /* write your code here */ "
+            value = {userCode}
             onChange={(value) => { setUserCode(value) }}
           />
           <button className="run-btn" onClick={() => compile()}>

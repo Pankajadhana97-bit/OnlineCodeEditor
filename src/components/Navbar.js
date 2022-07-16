@@ -1,9 +1,14 @@
 import React, { useState } from 'react'
 import '../App.css';
-import coder from '../assets/coder.gif';
 import pankaj from '../assets/pankaj.svg';
 
 const Navbar = (props) => {
+
+    const codes = new Map();
+    codes['cpp'] = '#include<bits/stdc++.h>\nusing namespace std;\n\nint main(){ \n cout<<"Hello world;\n return 0;\n}'
+    codes['py'] = 'print("Hello world!!")\n';
+    codes['java'] = 'import java.util.*;\nimport java.lang.*;\nimport java.io.*;\n\nclass HelloWorld {\n public static void main(String[] args) {\n  System.out.println("Hello, World!");\n  }\n}'
+
     const [toggle, setToggle] = useState(true);
     const [count, setCount] = useState(0);
     const [language, setLanguage] = useState("cpp")
@@ -19,13 +24,16 @@ const Navbar = (props) => {
         setCount((count + 1) % 3);
         if (count === 0) {
             props.setUserLang("cpp")
+            props.setUserCode(codes['cpp']);
             setLanguage("cpp");
         }
         else if (count === 1) {
             props.setUserLang("py")
+            props.setUserCode(codes['py']);
             setLanguage("Python");
         } else {
             props.setUserLang("java")
+            props.setUserCode(codes['java']);
             setLanguage("Java");
         }
     }
@@ -36,12 +44,6 @@ const Navbar = (props) => {
                 <div className="container">
                     <a class="navbar-brand" href="#Navbar"
                     >
-                        <img
-                            id="code-logo"
-                            src={coder}
-                            height="30"
-                            alt = "good"
-                        />
                         <img
                             id="code-logo"
                             src={pankaj}
@@ -68,7 +70,7 @@ const Navbar = (props) => {
                                 <button class="btn btn-black btn-rounded text-success"> Language : {language} </button>
                             </li>
                             <li className="nav-item ms-3">
-                            <input type="range" min="18" max="30" value={props.fontSize} step="0.5" onChange={(e) => { props.setFontSize(e.target.value) }} />
+                            <input type="range" min="15" max="40" value={props.fontSize} step="0.2" onChange={(e) => { props.setFontSize(e.target.value) }} />
                             </li>
                             <li className="nav-item ms-3" onClick={() => newMode() }>
                                 {toggle ? <button class="btn btn-black btn-rounded text-danger"> 👌 Light </button> : <button class="btn btn-black btn-rounded text-success">👍 Dark</button>}
