@@ -5,7 +5,7 @@ import pankaj from '../assets/pankaj.svg';
 const Navbar = (props) => {
 
     const codes = new Map();
-    codes['cpp'] = '#include<bits/stdc++.h>\nusing namespace std;\n\nint main(){ \n cout<<"Hello world;\n return 0;\n}'
+    codes['cpp'] = '#include<bits/stdc++.h>\nusing namespace std;\n\nint main(){ \n cout<<"Hello world";\n return 0;\n}'
     codes['py'] = 'print("Hello world!!")\n';
     codes['java'] = 'import java.util.*;\nimport java.lang.*;\nimport java.io.*;\n\nclass HelloWorld {\n public static void main(String[] args) {\n  System.out.println("Hello, World!");\n  }\n}'
 
@@ -42,7 +42,7 @@ const Navbar = (props) => {
         <nav>
             <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
                 <div className="container">
-                    <a class="navbar-brand" href="#Navbar"
+                    <a className="navbar-brand" href="#Navbar"
                     >
                         <img
                             id="code-logo"
@@ -53,7 +53,7 @@ const Navbar = (props) => {
                         />
                         </a>
                     <button 
-                        class="navbar-toggler"
+                        className="navbar-toggler"
                         type="button"
                         data-mdb-toggle="collapse"
                         data-mdb-target="#navbarSupportedContent"
@@ -61,19 +61,19 @@ const Navbar = (props) => {
                         aria-expanded="false"
                         aria-label="Toggle navigation"
                     >
-                        <i class="fas fa-bars"></i>
+                        <i className="fas fa-bars"></i>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
-                        <ul class="navbar-nav ms-auto align-items-center">
+                        <ul className="navbar-nav ms-auto align-items-center">
                             <li className="nav-item ms-3" onClick={() => chooseLanguage() }>
-                                <button class="btn btn-black btn-rounded text-success"> Language : {language} </button>
+                                <button className="btn btn-black btn-rounded text-success"> Language : {language} </button>
                             </li>
                             <li className="nav-item ms-3">
                             <input type="range" min="15" max="40" value={props.fontSize} step="0.2" onChange={(e) => { props.setFontSize(e.target.value) }} />
                             </li>
                             <li className="nav-item ms-3" onClick={() => newMode() }>
-                                {toggle ? <button class="btn btn-black btn-rounded text-danger"> 👌 Light </button> : <button class="btn btn-black btn-rounded text-success">👍 Dark</button>}
+                                {toggle ? <button className="btn btn-black btn-rounded text-danger"> 👌 Light </button> : <button className="btn btn-black btn-rounded text-success">👍 Dark</button>}
                             </li>
                         </ul>
                     </div>
